@@ -75,6 +75,11 @@ namespace GDX11
 		SetWindowTextA(m_hWnd, name.c_str());
 	}
 
+	void Window::Close()
+	{
+		PostMessageA(m_hWnd, WM_CLOSE, 0, 0);
+	}
+
 	void Window::PollEvents()
 	{
 		MSG msg;

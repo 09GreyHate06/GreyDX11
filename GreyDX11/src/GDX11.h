@@ -10,3 +10,4 @@
 
 #include "GDX11/Core/KeyCodes.h"
 #include "GDX11/Core/MouseCodes.h"
+#include "GDX11/Core/Input.h"

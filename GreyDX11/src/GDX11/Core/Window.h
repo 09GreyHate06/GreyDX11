@@ -63,10 +63,17 @@ namespace GDX11
 
 		const WindowDesc& GetDesc() const { return m_desc; }
 		const WindowState& GetState() const { return m_state; }
-
 		HWND GetNativeWindow() const { return m_hWnd; }
 
+		void Close();
+
+
 		static void PollEvents();
+
+		operator HWND()
+		{
+			return m_hWnd;
+		}
 
 	private:
 		LRESULT HandleMessage(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam);
