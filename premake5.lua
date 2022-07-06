@@ -10,6 +10,10 @@ workspace "GreyDX11"
 
 outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
+IncludeDir = {}
+IncludeDir["stb_image"] = "GreyDX11/vendor/stb_image/"
+IncludeDir["spdlog"]    = "GreyDX11/vendor/spdlog/include"
+
 project "GreyDX11"
     location "GreyDX11"
     kind "StaticLib"
@@ -30,6 +34,9 @@ project "GreyDX11"
     includedirs
     {
         "%{prj.name}/src",
+        "%{IncludeDir.stb_image}",
+        "%{prj.name}/vendor",
+        "%{IncludeDir.spdlog}",
     }
 
     filter "system:windows"

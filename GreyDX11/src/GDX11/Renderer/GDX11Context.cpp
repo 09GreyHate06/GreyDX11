@@ -1,7 +1,8 @@
 #include "GDX11Context.h"
 
 #include "DXError/dxerr.h"
-#include <assert.h>
+#include "../Core/Log.h"
+#include "../Core/GDX11Assert.h"
 
 #pragma comment(lib, "d3d11.lib")
 #pragma comment(lib, "D3DCompiler.lib")
@@ -19,7 +20,9 @@ namespace GDX11
 
 	GDX11Context::GDX11Context(HWND hWnd, const DXGI_SWAP_CHAIN_DESC& scDesc)
 	{
-		assert(IsWindow(hWnd) && "Not a window");
+		Log::Init();
+
+		GDX11_CORE_ASSERT(IsWindow(hWnd), "Not a window");
 
 		HRESULT hr;
 

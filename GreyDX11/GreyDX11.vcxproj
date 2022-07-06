@@ -57,7 +57,7 @@
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>GDX11_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>src;vendor\stb_image;vendor;vendor\spdlog\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
@@ -73,7 +73,7 @@
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>GDX11_RELEASE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>src;vendor\stb_image;vendor;vendor\spdlog\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Full</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
@@ -90,8 +90,11 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="src\GDX11.h" />
+    <ClInclude Include="src\GDX11\Core\GDX11Assert.h" />
     <ClInclude Include="src\GDX11\Core\GDX11Exception.h" />
+    <ClInclude Include="src\GDX11\Core\Input.h" />
     <ClInclude Include="src\GDX11\Core\KeyCodes.h" />
+    <ClInclude Include="src\GDX11\Core\Log.h" />
     <ClInclude Include="src\GDX11\Core\MouseCodes.h" />
     <ClInclude Include="src\GDX11\Core\NativeWindow.h" />
     <ClInclude Include="src\GDX11\Core\Window.h" />
@@ -105,12 +108,26 @@
     <ClInclude Include="src\GDX11\Renderer\DXError\DxgiInfoManager.h" />
     <ClInclude Include="src\GDX11\Renderer\DXError\dxerr.h" />
     <ClInclude Include="src\GDX11\Renderer\GDX11Context.h" />
+    <ClInclude Include="src\GDX11\Utils\Buffer.h" />
+    <ClInclude Include="src\GDX11\Utils\DepthStencil.h" />
+    <ClInclude Include="src\GDX11\Utils\RenderTarget.h" />
+    <ClInclude Include="src\GDX11\Utils\SamplerState.h" />
+    <ClInclude Include="src\GDX11\Utils\Shader.h" />
+    <ClInclude Include="src\GDX11\Utils\Texture2D.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\GDX11\Core\Input.cpp" />
+    <ClCompile Include="src\GDX11\Core\Log.cpp" />
     <ClCompile Include="src\GDX11\Core\Window.cpp" />
     <ClCompile Include="src\GDX11\Renderer\DXError\DxgiInfoManager.cpp" />
     <ClCompile Include="src\GDX11\Renderer\DXError\dxerr.cpp" />
     <ClCompile Include="src\GDX11\Renderer\GDX11Context.cpp" />
+    <ClCompile Include="src\GDX11\Utils\Buffer.cpp" />
+    <ClCompile Include="src\GDX11\Utils\DepthStencil.cpp" />
+    <ClCompile Include="src\GDX11\Utils\RenderTarget.cpp" />
+    <ClCompile Include="src\GDX11\Utils\SamplerState.cpp" />
+    <ClCompile Include="src\GDX11\Utils\Shader.cpp" />
+    <ClCompile Include="src\GDX11\Utils\Texture2D.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
