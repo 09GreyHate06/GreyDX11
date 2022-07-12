@@ -1,13 +1,11 @@
 #include "SamplerState.h"
 #include "../Core/GDX11Assert.h"
 
-namespace GDX11::Utils
+namespace GDX11
 {
 	SamplerState::SamplerState(GDX11Context* context, const D3D11_SAMPLER_DESC& samplerDesc)
-		: m_context(context)
+		: RenderingResource(context)
 	{
-		GDX11_CORE_ASSERT(m_context, "Context cannot be null");
-
 		HRESULT hr;
 		GDX11_CONTEXT_THROW_INFO(m_context->GetDevice()->CreateSamplerState(&samplerDesc, &m_samplerState));
 	}

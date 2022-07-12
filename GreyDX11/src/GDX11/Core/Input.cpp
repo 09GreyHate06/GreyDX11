@@ -2,9 +2,9 @@
 
 namespace GDX11
 {
-	bool Input::GetKey(const Window& window, const KeyCode key)
+	bool Input::GetKey(const Window* window, const KeyCode key)
 	{
-		if (!window.GetState().isFocus) return false;
+		if (!window->GetState().isFocus) return false;
 
 		return (GetAsyncKeyState(key) & 0x8000) != 0;
 	}
@@ -16,9 +16,9 @@ namespace GDX11
 		return (GetAsyncKeyState(key) & 0x8000) != 0;
 	}
 
-	bool Input::GetMouseButton(const Window& window, const MouseCode button)
+	bool Input::GetMouseButton(const Window* window, const MouseCode button)
 	{
-		if (!window.GetState().isFocus) return false;
+		if (!window->GetState().isFocus) return false;
 
 		return (GetAsyncKeyState(button) & 0x8000) != 0;
 	}
@@ -30,11 +30,11 @@ namespace GDX11
 		return (GetAsyncKeyState(button) & 0x8000) != 0;
 	}
 
-	DirectX::XMFLOAT2 Input::GetMousePos(const Window& window)
+	DirectX::XMFLOAT2 Input::GetMousePos(const Window* window)
 	{
 		POINT p;
 		GetCursorPos(&p);
-		ScreenToClient(window.GetNativeWindow(), &p);
+		ScreenToClient(window->GetNativeWindow(), &p);
 		return { static_cast<float>(p.x), static_cast<float>(p.y) };
 	}
 
@@ -46,7 +46,7 @@ namespace GDX11
 		return { static_cast<float>(p.x), static_cast<float>(p.y) };
 	}
 
-	float Input::GetMouseX(const Window& window)
+	float Input::GetMouseX(const Window* window)
 	{
 		return GetMousePos(window).x;
 	}
@@ -56,7 +56,7 @@ namespace GDX11
 		return GetMousePos(window).x;
 	}
 
-	float Input::GetMouseY(const Window& window)
+	float Input::GetMouseY(const Window* window)
 	{
 		return GetMousePos(window).y;
 	}

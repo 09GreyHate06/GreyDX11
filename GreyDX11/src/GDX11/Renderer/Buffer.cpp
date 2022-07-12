@@ -1,13 +1,11 @@
 #include "Buffer.h"
 #include "../Core/GDX11Assert.h"
 
-namespace GDX11::Utils
+namespace GDX11
 {
 	Buffer::Buffer(GDX11Context* context, const void* data, const D3D11_BUFFER_DESC& desc)
-		: m_context(context)
+		: RenderingResource(context)
 	{
-		GDX11_CORE_ASSERT(m_context, "Context cannot be null");
-
 		HRESULT hr;
 		if (data)
 		{

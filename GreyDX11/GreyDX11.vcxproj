@@ -108,12 +108,14 @@
     <ClInclude Include="src\GDX11\Renderer\DXError\DxgiInfoManager.h" />
     <ClInclude Include="src\GDX11\Renderer\DXError\dxerr.h" />
     <ClInclude Include="src\GDX11\Renderer\GDX11Context.h" />
-    <ClInclude Include="src\GDX11\Utils\Buffer.h" />
-    <ClInclude Include="src\GDX11\Utils\DepthStencil.h" />
-    <ClInclude Include="src\GDX11\Utils\RenderTarget.h" />
-    <ClInclude Include="src\GDX11\Utils\SamplerState.h" />
-    <ClInclude Include="src\GDX11\Utils\Shader.h" />
-    <ClInclude Include="src\GDX11\Utils\Texture2D.h" />
+    <ClInclude Include="src\GDX11\Renderer\Buffer.h" />
+    <ClInclude Include="src\GDX11\Renderer\DepthStencilView.h" />
+    <ClInclude Include="src\GDX11\Renderer\RenderingResource.h" />
+    <ClInclude Include="src\GDX11\Renderer\RenderTargetView.h" />
+    <ClInclude Include="src\GDX11\Renderer\SamplerState.h" />
+    <ClInclude Include="src\GDX11\Renderer\Shader.h" />
+    <ClInclude Include="src\GDX11\Renderer\Texture2D.h" />
+    <ClInclude Include="src\GDX11\Utils\Loader.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\GDX11\Core\Input.cpp" />
@@ -122,12 +124,13 @@
     <ClCompile Include="src\GDX11\Renderer\DXError\DxgiInfoManager.cpp" />
     <ClCompile Include="src\GDX11\Renderer\DXError\dxerr.cpp" />
     <ClCompile Include="src\GDX11\Renderer\GDX11Context.cpp" />
-    <ClCompile Include="src\GDX11\Utils\Buffer.cpp" />
-    <ClCompile Include="src\GDX11\Utils\DepthStencil.cpp" />
-    <ClCompile Include="src\GDX11\Utils\RenderTarget.cpp" />
-    <ClCompile Include="src\GDX11\Utils\SamplerState.cpp" />
-    <ClCompile Include="src\GDX11\Utils\Shader.cpp" />
-    <ClCompile Include="src\GDX11\Utils\Texture2D.cpp" />
+    <ClCompile Include="src\GDX11\Renderer\Buffer.cpp" />
+    <ClCompile Include="src\GDX11\Renderer\DepthStencilView.cpp" />
+    <ClCompile Include="src\GDX11\Renderer\RenderTargetView.cpp" />
+    <ClCompile Include="src\GDX11\Renderer\SamplerState.cpp" />
+    <ClCompile Include="src\GDX11\Renderer\Shader.cpp" />
+    <ClCompile Include="src\GDX11\Renderer\Texture2D.cpp" />
+    <ClCompile Include="src\GDX11\Utils\Loader.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

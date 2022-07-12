@@ -70,26 +70,28 @@
     <ClInclude Include="src\GDX11\Renderer\GDX11Context.h">
       <Filter>GDX11\Renderer</Filter>
     </ClInclude>
-    <ClInclude Include="src\GDX11\Utils\Buffer.h">
+    <ClInclude Include="src\GDX11\Renderer\Buffer.h">
       <Filter>GDX11\Utils</Filter>
     </ClInclude>
-    <ClInclude Include="src\GDX11\Utils\DepthStencil.h">
+    <ClInclude Include="src\GDX11\Renderer\DepthStencilView.h">
       <Filter>GDX11\Utils</Filter>
     </ClInclude>
-    <ClInclude Include="src\GDX11\Utils\RenderTarget.h">
+    <ClInclude Include="src\GDX11\Renderer\RenderTargetView.h">
       <Filter>GDX11\Utils</Filter>
     </ClInclude>
-    <ClInclude Include="src\GDX11\Utils\SamplerState.h">
+    <ClInclude Include="src\GDX11\Renderer\SamplerState.h">
       <Filter>GDX11\Utils</Filter>
     </ClInclude>
-    <ClInclude Include="src\GDX11\Utils\Shader.h">
+    <ClInclude Include="src\GDX11\Renderer\Shader.h">
       <Filter>GDX11\Utils</Filter>
     </ClInclude>
-    <ClInclude Include="src\GDX11\Utils\Texture2D.h">
+    <ClInclude Include="src\GDX11\Renderer\Texture2D.h">
       <Filter>GDX11\Utils</Filter>
     </ClInclude>
     <ClInclude Include="src\GDX11\Core\GDX11Assert.h" />
     <ClInclude Include="src\GDX11\Core\Log.h" />
+    <ClInclude Include="src\GDX11\Renderer\RenderingResource.h" />
+    <ClInclude Include="src\GDX11\Utils\Loader.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\GDX11\Core\Input.cpp">
@@ -107,22 +109,23 @@
     <ClCompile Include="src\GDX11\Renderer\GDX11Context.cpp">
       <Filter>GDX11\Renderer</Filter>
     </ClCompile>
-    <ClCompile Include="src\GDX11\Utils\Buffer.cpp">
+    <ClCompile Include="src\GDX11\Renderer\Buffer.cpp">
       <Filter>GDX11\Utils</Filter>
     </ClCompile>
-    <ClCompile Include="src\GDX11\Utils\RenderTarget.cpp">
+    <ClCompile Include="src\GDX11\Renderer\RenderTargetView.cpp">
       <Filter>GDX11\Utils</Filter>
     </ClCompile>
-    <ClCompile Include="src\GDX11\Utils\SamplerState.cpp">
+    <ClCompile Include="src\GDX11\Renderer\SamplerState.cpp">
       <Filter>GDX11\Utils</Filter>
     </ClCompile>
-    <ClCompile Include="src\GDX11\Utils\Shader.cpp">
+    <ClCompile Include="src\GDX11\Renderer\Shader.cpp">
       <Filter>GDX11\Utils</Filter>
     </ClCompile>
-    <ClCompile Include="src\GDX11\Utils\Texture2D.cpp">
+    <ClCompile Include="src\GDX11\Renderer\Texture2D.cpp">
       <Filter>GDX11\Utils</Filter>
     </ClCompile>
     <ClCompile Include="src\GDX11\Core\Log.cpp" />
-    <ClCompile Include="src\GDX11\Utils\DepthStencil.cpp" />
+    <ClCompile Include="src\GDX11\Renderer\DepthStencilView.cpp" />
+    <ClCompile Include="src\GDX11\Utils\Loader.cpp" />
   </ItemGroup>
 </Project>

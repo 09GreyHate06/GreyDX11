@@ -13,8 +13,8 @@ namespace GDX11
 	DxgiInfoManager GDX11Context::s_infoManager;
 #endif // GDX11_DEBUG
 
-	GDX11Context::GDX11Context(Window window, const DXGI_SWAP_CHAIN_DESC& scDesc)
-		: GDX11Context(window.GetNativeWindow(), scDesc)
+	GDX11Context::GDX11Context(const Window* window, const DXGI_SWAP_CHAIN_DESC& scDesc)
+		: GDX11Context(window->GetNativeWindow(), scDesc)
 	{
 	}
 

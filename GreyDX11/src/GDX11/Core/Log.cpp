@@ -3,7 +3,7 @@
 
 namespace GDX11
 {
-	bool Log::s_init
+	bool Log::s_init = false;
 	std::shared_ptr<spdlog::logger> Log::s_coreLogger;
 	std::shared_ptr<spdlog::logger> Log::s_clientLogger;
 
