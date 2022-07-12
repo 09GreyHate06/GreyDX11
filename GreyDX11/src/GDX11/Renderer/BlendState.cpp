@@ -11,7 +11,7 @@ namespace GDX11
 
 	void BlendState::Bind(const float* blendFactor, uint32_t sampleMask) const
 	{
-		m_context->GetDeviceContext()->OMSetBlendState(m_bs.Get(), blendFactor, sampleMask)
+		m_context->GetDeviceContext()->OMSetBlendState(m_bs.Get(), blendFactor, sampleMask);
 	}
 
 	std::shared_ptr<BlendState> BlendState::Create(GDX11Context* context, const D3D11_BLEND_DESC& desc)

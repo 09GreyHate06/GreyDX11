@@ -92,6 +92,9 @@
     <ClInclude Include="src\GDX11\Core\Log.h" />
     <ClInclude Include="src\GDX11\Renderer\RenderingResource.h" />
     <ClInclude Include="src\GDX11\Utils\Loader.h" />
+    <ClInclude Include="src\GDX11\Renderer\RasterizerState.h" />
+    <ClInclude Include="src\GDX11\Renderer\BlendState.h" />
+    <ClInclude Include="src\GDX11\Renderer\DepthStencilState.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\GDX11\Core\Input.cpp">
@@ -127,5 +130,8 @@
     <ClCompile Include="src\GDX11\Core\Log.cpp" />
     <ClCompile Include="src\GDX11\Renderer\DepthStencilView.cpp" />
     <ClCompile Include="src\GDX11\Utils\Loader.cpp" />
+    <ClCompile Include="src\GDX11\Renderer\RasterizerState.cpp" />
+    <ClCompile Include="src\GDX11\Renderer\BlendState.cpp" />
+    <ClCompile Include="src\GDX11\Renderer\DepthStencilState.cpp" />
   </ItemGroup>
 </Project>

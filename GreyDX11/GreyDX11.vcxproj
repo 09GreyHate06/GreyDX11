@@ -102,6 +102,8 @@
     <ClInclude Include="src\GDX11\Event\Event.h" />
     <ClInclude Include="src\GDX11\Event\KeyEvent.h" />
     <ClInclude Include="src\GDX11\Event\MouseEvent.h" />
+    <ClInclude Include="src\GDX11\Renderer\BlendState.h" />
+    <ClInclude Include="src\GDX11\Renderer\DepthStencilState.h" />
     <ClInclude Include="src\GDX11\Renderer\DXError\DXGetErrorDescription.inl" />
     <ClInclude Include="src\GDX11\Renderer\DXError\DXGetErrorString.inl" />
     <ClInclude Include="src\GDX11\Renderer\DXError\DXTrace.inl" />
@@ -110,6 +112,7 @@
     <ClInclude Include="src\GDX11\Renderer\GDX11Context.h" />
     <ClInclude Include="src\GDX11\Renderer\Buffer.h" />
     <ClInclude Include="src\GDX11\Renderer\DepthStencilView.h" />
+    <ClInclude Include="src\GDX11\Renderer\RasterizerState.h" />
     <ClInclude Include="src\GDX11\Renderer\RenderingResource.h" />
     <ClInclude Include="src\GDX11\Renderer\RenderTargetView.h" />
     <ClInclude Include="src\GDX11\Renderer\SamplerState.h" />
@@ -121,11 +124,14 @@
     <ClCompile Include="src\GDX11\Core\Input.cpp" />
     <ClCompile Include="src\GDX11\Core\Log.cpp" />
     <ClCompile Include="src\GDX11\Core\Window.cpp" />
+    <ClCompile Include="src\GDX11\Renderer\BlendState.cpp" />
+    <ClCompile Include="src\GDX11\Renderer\DepthStencilState.cpp" />
     <ClCompile Include="src\GDX11\Renderer\DXError\DxgiInfoManager.cpp" />
     <ClCompile Include="src\GDX11\Renderer\DXError\dxerr.cpp" />
     <ClCompile Include="src\GDX11\Renderer\GDX11Context.cpp" />
     <ClCompile Include="src\GDX11\Renderer\Buffer.cpp" />
     <ClCompile Include="src\GDX11\Renderer\DepthStencilView.cpp" />
+    <ClCompile Include="src\GDX11\Renderer\RasterizerState.cpp" />
     <ClCompile Include="src\GDX11\Renderer\RenderTargetView.cpp" />
     <ClCompile Include="src\GDX11\Renderer\SamplerState.cpp" />
     <ClCompile Include="src\GDX11\Renderer\Shader.cpp" />
