@@ -3,7 +3,7 @@
 
 namespace GDX11
 {
-	Buffer::Buffer(GDX11Context* context, const void* data, const D3D11_BUFFER_DESC& desc)
+	Buffer::Buffer(GDX11Context* context, const D3D11_BUFFER_DESC& desc, const void* data)
 		: RenderingResource(context)
 	{
 		HRESULT hr;
@@ -50,8 +50,8 @@ namespace GDX11
 		m_context->GetDeviceContext()->Unmap(m_buffer.Get(), 0);
 	}
 
-	std::shared_ptr<Buffer> Buffer::Create(GDX11Context* context, const void* data, const D3D11_BUFFER_DESC& desc)
+	std::shared_ptr<Buffer> Buffer::Create(GDX11Context* context, const D3D11_BUFFER_DESC& desc, const void* data)
 	{
-		return std::shared_ptr<Buffer>(new Buffer(context, data, desc));
+		return std::shared_ptr<Buffer>(new Buffer(context, desc, data));
 	}
 }

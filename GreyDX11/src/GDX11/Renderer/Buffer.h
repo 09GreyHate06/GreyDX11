@@ -23,10 +23,10 @@ namespace GDX11
 
 		virtual ID3D11Buffer* GetNative() const override { return m_buffer.Get(); }
 
-		static std::shared_ptr<Buffer> Create(GDX11Context* context, const void* data, const D3D11_BUFFER_DESC& desc);
+		static std::shared_ptr<Buffer> Create(GDX11Context* context, const D3D11_BUFFER_DESC& desc, const void* data);
 
 	private:
-		Buffer(GDX11Context* context, const void* data, const D3D11_BUFFER_DESC& desc);
+		Buffer(GDX11Context* context, const D3D11_BUFFER_DESC& desc, const void* data);
 		Microsoft::WRL::ComPtr<ID3D11Buffer> m_buffer;
 	};
 }

@@ -14,7 +14,7 @@ namespace GDX11
     }
 
     DepthStencilView::DepthStencilView(GDX11Context* context, const D3D11_DEPTH_STENCIL_VIEW_DESC& dsvDesc, const std::shared_ptr<Texture2D>& tex)
-        : RenderingResource(m_context), m_dsTexture(tex)
+        : RenderingResource(context), m_dsTexture(tex)
     {
         GDX11_CORE_ASSERT(m_dsTexture, "Texture2D is null");
 

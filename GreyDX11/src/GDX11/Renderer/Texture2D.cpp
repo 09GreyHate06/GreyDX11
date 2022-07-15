@@ -5,7 +5,7 @@ namespace GDX11
 {
 	static constexpr uint32_t s_reqComponents = 4;
 
-	Texture2D::Texture2D(GDX11::GDX11Context* context, const void* data, const D3D11_TEXTURE2D_DESC& texDesc, const D3D11_SHADER_RESOURCE_VIEW_DESC& srvDesc)
+	Texture2D::Texture2D(GDX11::GDX11Context* context, const D3D11_TEXTURE2D_DESC& texDesc, const void* data, const D3D11_SHADER_RESOURCE_VIEW_DESC& srvDesc)
 		: RenderingResource(context)
 	{
 		HRESULT hr;
@@ -37,7 +37,7 @@ namespace GDX11
 		}
 	}
 
-	Texture2D::Texture2D(GDX11Context* context, const void* data, const D3D11_TEXTURE2D_DESC& texDesc)
+	Texture2D::Texture2D(GDX11Context* context, const D3D11_TEXTURE2D_DESC& texDesc, const void* data)
 		: RenderingResource(context)
 	{
 		HRESULT hr;
@@ -106,14 +106,14 @@ namespace GDX11
 
 
 
-	std::shared_ptr<Texture2D> Texture2D::Create(GDX11::GDX11Context* context, const void* data, const D3D11_TEXTURE2D_DESC& texDesc, const D3D11_SHADER_RESOURCE_VIEW_DESC& srvDesc)
+	std::shared_ptr<Texture2D> Texture2D::Create(GDX11::GDX11Context* context, const D3D11_TEXTURE2D_DESC& texDesc, const void* data, const D3D11_SHADER_RESOURCE_VIEW_DESC& srvDesc)
 	{
-		return std::shared_ptr<Texture2D>(new Texture2D(context, data, texDesc, srvDesc));
+		return std::shared_ptr<Texture2D>(new Texture2D(context, texDesc, data, srvDesc));
 	}
 
-	std::shared_ptr<Texture2D> Texture2D::Create(GDX11Context* context, const void* data, const D3D11_TEXTURE2D_DESC& texDesc)
+	std::shared_ptr<Texture2D> Texture2D::Create(GDX11Context* context, const D3D11_TEXTURE2D_DESC& texDesc, const void* data)
 	{
-		return std::shared_ptr<Texture2D>(new Texture2D(context, data, texDesc));
+		return std::shared_ptr<Texture2D>(new Texture2D(context, texDesc, data));
 	}
 
 	std::shared_ptr<Texture2D> Texture2D::Create(GDX11Context* context, ID3D11Texture2D* tex, const D3D11_SHADER_RESOURCE_VIEW_DESC& srvDesc)
