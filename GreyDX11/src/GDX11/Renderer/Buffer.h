@@ -14,11 +14,9 @@ namespace GDX11
 		void PSBindAsCBuf(uint32_t slot = 0) const;
 
 		void SetData(const void* data);
-		D3D11_BUFFER_DESC GetDesc() const
+		const D3D11_BUFFER_DESC& GetDesc() const
 		{
-			D3D11_BUFFER_DESC desc = {};
-			m_buffer->GetDesc(&desc);
-			return desc;
+			return m_desc;
 		}
 
 		virtual ID3D11Buffer* GetNative() const override { return m_buffer.Get(); }
@@ -28,5 +26,8 @@ namespace GDX11
 	private:
 		Buffer(GDX11Context* context, const D3D11_BUFFER_DESC& desc, const void* data);
 		Microsoft::WRL::ComPtr<ID3D11Buffer> m_buffer;
+
+		// ID3D11Buffer::GetDesc(out) function doesn't fill out StructureByteStride (???)
+		D3D11_BUFFER_DESC m_desc;
 	};
 }

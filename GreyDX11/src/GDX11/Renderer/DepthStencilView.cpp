@@ -13,6 +13,11 @@ namespace GDX11
         return std::shared_ptr<DepthStencilView>(new DepthStencilView(context, dsvDesc, tex));
     }
 
+    std::shared_ptr<DepthStencilView> DepthStencilView::Create(GDX11Context* context, ID3D11DepthStencilView* dsv, const std::shared_ptr<Texture2D>& tex)
+    {
+        return std::shared_ptr<DepthStencilView>(new DepthStencilView(context, dsv, tex));
+    }
+
     DepthStencilView::DepthStencilView(GDX11Context* context, const D3D11_DEPTH_STENCIL_VIEW_DESC& dsvDesc, const std::shared_ptr<Texture2D>& tex)
         : RenderingResource(context), m_dsTexture(tex)
     {
@@ -24,5 +29,12 @@ namespace GDX11
 
         HRESULT hr;
         GDX11_CONTEXT_THROW_INFO(m_context->GetDevice()->CreateDepthStencilView(m_dsTexture->GetNative(), &dsvDesc, &m_dsv));
+    }
+
+    DepthStencilView::DepthStencilView(GDX11Context* context, ID3D11DepthStencilView* dsv, const std::shared_ptr<Texture2D>& tex)
+        : RenderingResource(context), m_dsv(dsv), m_dsTexture(tex)
+    {
+        GDX11_CORE_ASSERT(m_dsv, "DepthStencilView is null");
+        GDX11_CORE_ASSERT(m_dsTexture, "Texture2D is null");
     }
 }

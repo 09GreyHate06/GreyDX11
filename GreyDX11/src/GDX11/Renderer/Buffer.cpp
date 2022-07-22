@@ -4,7 +4,7 @@
 namespace GDX11
 {
 	Buffer::Buffer(GDX11Context* context, const D3D11_BUFFER_DESC& desc, const void* data)
-		: RenderingResource(context)
+		: RenderingResource(context), m_desc(desc)
 	{
 		HRESULT hr;
 		if (data)
@@ -22,7 +22,7 @@ namespace GDX11
 	void Buffer::BindAsVB() const
 	{
 		const uint32_t offset = 0;
-		const uint32_t stride = GetDesc().StructureByteStride;
+		const uint32_t stride = m_desc.StructureByteStride;
 		m_context->GetDeviceContext()->IASetVertexBuffers(0, 1, m_buffer.GetAddressOf(), &stride, &offset);
 	}
 

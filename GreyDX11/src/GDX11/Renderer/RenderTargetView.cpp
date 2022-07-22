@@ -16,6 +16,13 @@ namespace GDX11
 		GDX11_CONTEXT_THROW_INFO(m_context->GetDevice()->CreateRenderTargetView(m_rtTexture->GetNative(), &rtvDesc, &m_rtv));
 	}
 
+	RenderTargetView::RenderTargetView(GDX11Context* context, ID3D11RenderTargetView* rtv, const std::shared_ptr<Texture2D>& tex)
+		: RenderingResource(context), m_rtv(rtv), m_rtTexture(tex)
+	{
+		GDX11_CORE_ASSERT(m_rtv, "RenderTargetView is null");
+		GDX11_CORE_ASSERT(m_rtTexture, "Texture2D is null");
+	}
+
 	void RenderTargetView::Clear(float r, float g, float b, float a)
 	{
 		float color[] = { r, g, b, a };
@@ -31,5 +38,9 @@ namespace GDX11
 	std::shared_ptr<RenderTargetView> RenderTargetView::Create(GDX11Context* context, const D3D11_RENDER_TARGET_VIEW_DESC& rtvDesc, const std::shared_ptr<Texture2D>& tex)
 	{
 		return std::shared_ptr<RenderTargetView>(new RenderTargetView(context, rtvDesc, tex));
+	}
+	std::shared_ptr<RenderTargetView> RenderTargetView::Create(GDX11Context* context, ID3D11RenderTargetView* rtv, const std::shared_ptr<Texture2D>& tex)
+	{
+		return std::shared_ptr<RenderTargetView>(new RenderTargetView(context, rtv, tex));
 	}
 }

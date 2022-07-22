@@ -112,11 +112,13 @@
     <ClInclude Include="src\GDX11\Renderer\GDX11Context.h" />
     <ClInclude Include="src\GDX11\Renderer\Buffer.h" />
     <ClInclude Include="src\GDX11\Renderer\DepthStencilView.h" />
+    <ClInclude Include="src\GDX11\Renderer\InputLayout.h" />
     <ClInclude Include="src\GDX11\Renderer\RasterizerState.h" />
     <ClInclude Include="src\GDX11\Renderer\RenderingResource.h" />
     <ClInclude Include="src\GDX11\Renderer\RenderTargetView.h" />
     <ClInclude Include="src\GDX11\Renderer\SamplerState.h" />
     <ClInclude Include="src\GDX11\Renderer\Shader.h" />
+    <ClInclude Include="src\GDX11\Renderer\ShaderResourceView.h" />
     <ClInclude Include="src\GDX11\Renderer\Texture2D.h" />
     <ClInclude Include="src\GDX11\Utils\Loader.h" />
   </ItemGroup>
@@ -131,10 +133,12 @@
     <ClCompile Include="src\GDX11\Renderer\GDX11Context.cpp" />
     <ClCompile Include="src\GDX11\Renderer\Buffer.cpp" />
     <ClCompile Include="src\GDX11\Renderer\DepthStencilView.cpp" />
+    <ClCompile Include="src\GDX11\Renderer\InputLayout.cpp" />
     <ClCompile Include="src\GDX11\Renderer\RasterizerState.cpp" />
     <ClCompile Include="src\GDX11\Renderer\RenderTargetView.cpp" />
     <ClCompile Include="src\GDX11\Renderer\SamplerState.cpp" />
     <ClCompile Include="src\GDX11\Renderer\Shader.cpp" />
+    <ClCompile Include="src\GDX11\Renderer\ShaderResourceView.cpp" />
     <ClCompile Include="src\GDX11\Renderer\Texture2D.cpp" />
     <ClCompile Include="src\GDX11\Utils\Loader.cpp" />
   </ItemGroup>

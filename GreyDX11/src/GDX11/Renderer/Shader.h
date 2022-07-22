@@ -67,7 +67,6 @@ namespace GDX11
 
 		virtual ID3D11VertexShader* GetNative() const override { return m_vs.Get(); }
 		virtual ID3DBlob* GetByteCode() const override { return m_byteCode.Get(); }
-		virtual ID3D11InputLayout* GetInputLayout() const { return m_inputLayout.Get(); }
 		virtual ID3D11ShaderReflection* GetReflection() const override { return m_reflection.Get(); }
 
 		static std::shared_ptr<VertexShader> Create(GDX11Context* context, const std::string& src);
@@ -75,11 +74,8 @@ namespace GDX11
 	private:
 		VertexShader(GDX11Context* context, const std::string& src);
 
-		void CreateInputLayout();
-
 		Microsoft::WRL::ComPtr<ID3D11VertexShader> m_vs;
 		Microsoft::WRL::ComPtr<ID3DBlob> m_byteCode;
-		Microsoft::WRL::ComPtr<ID3D11InputLayout> m_inputLayout;
 		Microsoft::WRL::ComPtr<ID3D11ShaderReflection> m_reflection;
 
 		std::unordered_map<std::string, uint32_t> m_resBindingCache;
@@ -110,55 +106,4 @@ namespace GDX11
 
 		std::unordered_map<std::string, uint32_t> m_resBindingCache;
 	};
-
-	//class Shader
-	//{
-	//public:
-	//	virtual ~Shader() = default;
-
-	//	void Bind();
-
-	//	uint32_t GetVSResBinding(const std::string& name);
-	//	uint32_t GetPSResBinding(const std::string& name);
-
-
-
-	//	ID3D11VertexShader* GetVertexShader() const { return m_vs.Get(); }
-	//	ID3D11PixelShader* GetPixelShader() const { return m_ps.Get(); }
-	//	ID3DBlob* GetVertexShaderByteCode() const { return m_vsByteCode.Get(); }
-	//	ID3DBlob* GetPixelShaderByteCode() const { return m_psByteCode.Get(); }
-	//	ID3D11InputLayout* GetVertexShaderInputLayout() const { return m_vsInputLayout.Get(); }
-	//	ID3D11ShaderReflection* GetVertexShaderReflection() const { return m_vsReflection.Get(); }
-	//	ID3D11ShaderReflection* GetPixelShaderReflection() const { return m_psReflection.Get(); }
-
-
-
-	//	static std::shared_ptr<Shader> Create(GDX11::GDX11Context* context, const std::string& vertexFilename, const std::string& pixelFilename);
-	//	static std::shared_ptr<Shader> Create(GDX11::GDX11Context* context, const std::string& vertexFilename);
-
-	//private:
-	//	Shader(GDX11::GDX11Context* context, const std::string& vertexFilename, const std::string& pixelFilename);
-	//	Shader(GDX11::GDX11Context* context, const std::string& vertexFilename);
-
-	//	void CreateInputLayout();
-
-	//	GDX11::GDX11Context* m_context;
-
-	//	Microsoft::WRL::ComPtr<ID3D11VertexShader> m_vs = nullptr;
-	//	Microsoft::WRL::ComPtr<ID3D11PixelShader> m_ps = nullptr;
-	//	Microsoft::WRL::ComPtr<ID3DBlob> m_vsByteCode = nullptr;
-	//	Microsoft::WRL::ComPtr<ID3DBlob> m_psByteCode = nullptr;
-
-	//	Microsoft::WRL::ComPtr<ID3D11InputLayout> m_vsInputLayout = nullptr;
-
-	//	Microsoft::WRL::ComPtr<ID3D11ShaderReflection> m_vsReflection = nullptr;
-	//	Microsoft::WRL::ComPtr<ID3D11ShaderReflection> m_psReflection = nullptr;
-
-	//	std::unordered_map<std::string, uint32_t> m_resVSBindingCache;
-	//	std::unordered_map<std::string, uint32_t> m_resPSBindingCache;
-
-
-
-
-	//};
 }
