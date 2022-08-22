@@ -8,6 +8,11 @@ namespace GDX11
         m_context->GetDeviceContext()->ClearDepthStencilView(m_dsv.Get(), clearFlags, depth, stencil);
     }
 
+    void DepthStencilView::Bind()
+    {
+        m_context->GetDeviceContext()->OMSetRenderTargets(0, nullptr, m_dsv.Get());
+    }
+
     std::shared_ptr<DepthStencilView> GDX11::DepthStencilView::Create(GDX11Context* context, const D3D11_DEPTH_STENCIL_VIEW_DESC& dsvDesc, const std::shared_ptr<Texture2D>& tex)
     {
         return std::shared_ptr<DepthStencilView>(new DepthStencilView(context, dsvDesc, tex));

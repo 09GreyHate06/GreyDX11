@@ -11,6 +11,9 @@ namespace GDX11
 
 		void Clear(uint32_t clearFlags, float depth, uint8_t stencil);
 
+		// Bind depth stencil view without render target view
+		void Bind();
+
 		virtual ID3D11DepthStencilView* GetNative() const override { return m_dsv.Get(); }
 		const std::shared_ptr<Texture2D>& GetTexture2D() const { return m_dsTexture; }
 

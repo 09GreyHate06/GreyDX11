@@ -10,8 +10,9 @@ namespace GDX11
 
 		void BindAsVB() const;
 		void BindAsIB(DXGI_FORMAT format) const;
-		void VSBindAsCBuf(uint32_t slot = 0) const;
-		void PSBindAsCBuf(uint32_t slot = 0) const;
+		void VSBindAsCBuf(uint32_t slot) const;
+		void GSBindAsCBuf(uint32_t slot) const;
+		void PSBindAsCBuf(uint32_t slot) const;
 
 		void SetData(const void* data);
 		const D3D11_BUFFER_DESC& GetDesc() const

@@ -36,6 +36,11 @@ namespace GDX11
 		m_context->GetDeviceContext()->VSSetConstantBuffers(slot, 1, m_buffer.GetAddressOf());
 	}
 
+	void Buffer::GSBindAsCBuf(uint32_t slot) const
+	{
+		m_context->GetDeviceContext()->GSSetConstantBuffers(slot, 1, m_buffer.GetAddressOf());
+	}
+
 	void Buffer::PSBindAsCBuf(uint32_t slot) const
 	{
 		m_context->GetDeviceContext()->PSSetConstantBuffers(slot, 1, m_buffer.GetAddressOf());

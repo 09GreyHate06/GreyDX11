@@ -106,4 +106,30 @@ namespace GDX11
 
 		std::unordered_map<std::string, uint32_t> m_resBindingCache;
 	};
+
+	class GeometryShader : public Shader<ID3D11GeometryShader>
+	{
+	public:
+		virtual ~GeometryShader() = default;
+
+		virtual void Bind() const;
+		virtual uint32_t GetResBinding(const std::string& name);
+
+		virtual ID3D11GeometryShader* GetNative() const override { return m_gs.Get(); }
+		virtual ID3DBlob* GetByteCode() const override { return m_byteCode.Get(); }
+		virtual ID3D11ShaderReflection* GetReflection() const override { return m_reflection.Get(); }
+
+		static std::shared_ptr<GeometryShader> Create(GDX11Context* context, const std::string& src);
+		static std::shared_ptr<GeometryShader> Create(GDX11Context* context);
+
+	private:
+		GeometryShader(GDX11Context* context, const std::string& src);
+		GeometryShader(GDX11Context* context);
+
+		Microsoft::WRL::ComPtr<ID3D11GeometryShader> m_gs;
+		Microsoft::WRL::ComPtr<ID3DBlob> m_byteCode;
+		Microsoft::WRL::ComPtr<ID3D11ShaderReflection> m_reflection;
+
+		std::unordered_map<std::string, uint32_t> m_resBindingCache;
+	};
 }

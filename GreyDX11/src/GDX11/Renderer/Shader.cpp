@@ -89,4 +89,52 @@ namespace GDX11
 	{
 		return std::shared_ptr<PixelShader>(new PixelShader(context));
 	}
+
+
+
+	GeometryShader::GeometryShader(GDX11Context* context, const std::string& src)
+		: Shader(context)
+	{
+		HRESULT hr;
+		ComPtr<ID3DBlob> errorBlob;
+		if (FAILED(hr = D3DCompile(src.data(), src.size(), nullptr, nullptr, nullptr, "main", "gs_4_0", 0, 0, &m_byteCode, &errorBlob)))
+			throw GDX11_SHADER_COMPILATION_EXCEPT(hr, static_cast<const char*>(errorBlob->GetBufferPointer()));
+
+		GDX11_CONTEXT_THROW_INFO(m_context->GetDevice()->CreateGeometryShader(m_byteCode->GetBufferPointer(), m_byteCode->GetBufferSize(), nullptr, &m_gs));
+		GDX11_CONTEXT_THROW_INFO(D3DReflect(m_byteCode->GetBufferPointer(), m_byteCode->GetBufferSize(), __uuidof(ID3D11ShaderReflection), &m_reflection));
+	}
+
+	GeometryShader::GeometryShader(GDX11Context* context)
+		: Shader(context), m_gs(nullptr), m_byteCode(nullptr), m_reflection(nullptr)
+	{
+	}
+
+	void GeometryShader::Bind() const
+	{
+		m_context->GetDeviceContext()->GSSetShader(m_gs.Get(), nullptr, 0);
+	}
+
+	uint32_t GeometryShader::GetResBinding(const std::string& name)
+	{
+		if (m_resBindingCache.find(name) != m_resBindingCache.end())
+			return m_resBindingCache[name];
+
+		HRESULT hr;
+		D3D11_SHADER_INPUT_BIND_DESC desc = {};
+		GDX11_CONTEXT_THROW_INFO(m_reflection->GetResourceBindingDescByName(name.c_str(), &desc));
+		uint32_t slot = desc.BindPoint;
+		m_resBindingCache[name] = slot;
+		return slot;
+	}
+
+	std::shared_ptr<GeometryShader> GeometryShader::Create(GDX11Context* context, const std::string& src)
+	{
+		return std::shared_ptr<GeometryShader>(new GeometryShader(context, src));
+	}
+
+	std::shared_ptr<GeometryShader> GeometryShader::Create(GDX11Context* context)
+	{
+		return std::shared_ptr<GeometryShader>(new GeometryShader(context));
+	}
+
 }

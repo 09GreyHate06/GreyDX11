@@ -13,6 +13,9 @@ namespace GDX11
 
 		HRESULT hr;
 		GDX11_CONTEXT_THROW_INFO(m_context->GetDevice()->CreateShaderResourceView(m_texture->GetNative(), &srvDesc, &m_srv));
+
+		if (texDesc.MiscFlags & D3D11_RESOURCE_MISC_GENERATE_MIPS)
+			m_context->GetDeviceContext()->GenerateMips(m_srv.Get());
 	}
 
 	ShaderResourceView::ShaderResourceView(GDX11Context* context, ID3D11ShaderResourceView* srv, const std::shared_ptr<Texture2D>& tex)
@@ -34,6 +37,11 @@ namespace GDX11
 	void ShaderResourceView::VSBind(uint32_t slot) const
 	{
 		m_context->GetDeviceContext()->VSSetShaderResources(slot, 1, m_srv.GetAddressOf());
+	}
+
+	void ShaderResourceView::GSBind(uint32_t slot) const
+	{
+		m_context->GetDeviceContext()->GSSetShaderResources(slot, 1, m_srv.GetAddressOf());
 	}
 
 	void ShaderResourceView::PSBind(uint32_t slot) const
