@@ -3,6 +3,10 @@
 #include "../Event/KeyEvent.h"
 #include "../Event/MouseEvent.h"
 
+#ifdef GDX11_IMGUI_SUPPORT
+extern LRESULT ImGui_ImplWin32_WndProcHandler(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam);
+#endif
+
 namespace GDX11
 {
 	Window::WindowClass::WindowClass(const std::string& windowClassName)
@@ -92,6 +96,11 @@ namespace GDX11
 
 	LRESULT Window::HandleMessage(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam)
 	{
+#ifdef GDX11_IMGUI_SUPPORT
+		if (ImGui_ImplWin32_WndProcHandler(hWnd, msg, wParam, lParam))
+			return true;
+#endif // GDX11_IMGUI_SUPPORT
+
 		switch (msg)
 		{
 		case WM_CLOSE:
