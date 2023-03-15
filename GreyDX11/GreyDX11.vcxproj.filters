@@ -28,16 +28,16 @@
     <ClInclude Include="src\GDX11\Core\GDX11Exception.h">
       <Filter>GDX11\Core</Filter>
     </ClInclude>
-    <ClInclude Include="src\GDX11\Core\Input.h">
+    <ClInclude Include="src\GDX11\Event\Input.h">
       <Filter>GDX11\Core</Filter>
     </ClInclude>
-    <ClInclude Include="src\GDX11\Core\KeyCodes.h">
+    <ClInclude Include="src\GDX11\Event\KeyCodes.h">
       <Filter>GDX11\Core</Filter>
     </ClInclude>
     <ClInclude Include="src\GDX11\Core\Log.h">
       <Filter>GDX11\Core</Filter>
     </ClInclude>
-    <ClInclude Include="src\GDX11\Core\MouseCodes.h">
+    <ClInclude Include="src\GDX11\Event\MouseCodes.h">
       <Filter>GDX11\Core</Filter>
     </ClInclude>
     <ClInclude Include="src\GDX11\Core\NativeWindow.h">
@@ -117,7 +117,7 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\GDX11\Core\Input.cpp">
+    <ClCompile Include="src\GDX11\Event\Input.cpp">
       <Filter>GDX11\Core</Filter>
     </ClCompile>
     <ClCompile Include="src\GDX11\Core\Log.cpp">

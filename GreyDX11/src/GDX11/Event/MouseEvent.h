@@ -2,7 +2,7 @@
 #include <sstream>
 
 #include "Event.h"
-#include "../Core/MouseCodes.h"
+#include "MouseCodes.h"
 
 namespace GDX11
 {

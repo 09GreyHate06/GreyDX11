@@ -1,7 +1,7 @@
 #pragma once
 #include "KeyCodes.h"
 #include "MouseCodes.h"
-#include "Window.h"
+#include "GDX11/Core/Window.h"
 
 #include <DirectXMath.h>
 
