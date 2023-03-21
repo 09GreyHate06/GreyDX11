@@ -4,9 +4,6 @@
 #include "GDX11/Core/Window.h"
 #include "GDX11/Core/GDX11Exception.h"
 #include "GDX11/Core/GDX11Assert.h"
-#include "GDX11/Core/KeyCodes.h"
-#include "GDX11/Core/MouseCodes.h"
-#include "GDX11/Core/Input.h"
 #include "GDX11/Core/Log.h"
 
 #include "GDX11/Renderer/GDX11Context.h"
@@ -23,6 +20,9 @@
 #include "GDX11/Renderer/DepthStencilState.h"
 #include "GDX11/Renderer/Texture2D.h"
 
+#include "GDX11/Event/KeyCodes.h"
+#include "GDX11/Event/MouseCodes.h"
+#include "GDX11/Event/Input.h"
 #include "GDX11/Event/Event.h"
 #include "GDX11/Event/ApplicationEvent.h"
 #include "GDX11/Event/KeyEvent.h"

@@ -52,7 +52,6 @@ namespace GDX11
 				}
 				else
 				{
-					GDX11_CONTEXT_THROW_INFO(m_context->GetDevice()->CreateTexture2D(&texDesc, nullptr, &m_texture));
 					m_context->GetDeviceContext()->UpdateSubresource(m_texture.Get(), 0, nullptr,
 						srd->pSysMem, srd->SysMemPitch, 0);
 				}
