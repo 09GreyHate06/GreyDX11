@@ -120,7 +120,7 @@
     <ClInclude Include="src\GDX11\Renderer\Shader.h" />
     <ClInclude Include="src\GDX11\Renderer\ShaderResourceView.h" />
     <ClInclude Include="src\GDX11\Renderer\Texture2D.h" />
-    <ClInclude Include="src\GDX11\Utils\Loader.h" />
+    <ClInclude Include="src\GDX11\Utils\Utils.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\GDX11\Event\Input.cpp" />
@@ -140,7 +140,7 @@
     <ClCompile Include="src\GDX11\Renderer\Shader.cpp" />
     <ClCompile Include="src\GDX11\Renderer\ShaderResourceView.cpp" />
     <ClCompile Include="src\GDX11\Renderer\Texture2D.cpp" />
-    <ClCompile Include="src\GDX11\Utils\Loader.cpp" />
+    <ClCompile Include="src\GDX11\Utils\Utils.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
