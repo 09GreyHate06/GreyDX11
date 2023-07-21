@@ -1,7 +1,7 @@
 #include "Shader.h"
 #include "../Core/GDX11Assert.h"
 #include <fstream>
-#include "../Utils/Utils.h"
+#include "../Utils/String.h"
 
 using namespace Microsoft::WRL;
 

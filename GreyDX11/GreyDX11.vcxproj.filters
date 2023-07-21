@@ -112,9 +112,10 @@
     <ClInclude Include="src\GDX11\Renderer\Texture2D.h">
       <Filter>GDX11\Renderer</Filter>
     </ClInclude>
-    <ClInclude Include="src\GDX11\Utils\Utils.h">
-      <Filter>GDX11\Utils</Filter>
-    </ClInclude>
+    <ClInclude Include="src\GDX11\Utils\Image.h" />
+    <ClInclude Include="src\GDX11\Utils\String.h" />
+    <ClInclude Include="src\GDX11\Utils\ResourceLibrary.h" />
+    <ClInclude Include="src\GDX11\Utils\BasicMesh.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\GDX11\Event\Input.cpp">
@@ -168,8 +169,8 @@
     <ClCompile Include="src\GDX11\Renderer\Texture2D.cpp">
       <Filter>GDX11\Renderer</Filter>
     </ClCompile>
-    <ClCompile Include="src\GDX11\Utils\Utils.cpp">
-      <Filter>GDX11\Utils</Filter>
-    </ClCompile>
+    <ClCompile Include="src\GDX11\Utils\Image.cpp" />
+    <ClCompile Include="src\GDX11\Utils\String.cpp" />
+    <ClCompile Include="src\GDX11\Utils\BasicMesh.cpp" />
   </ItemGroup>
 </Project>

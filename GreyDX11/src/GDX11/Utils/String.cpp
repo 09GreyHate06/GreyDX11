@@ -1,7 +1,4 @@
-#include "Utils.h"
-
-#define STB_IMAGE_IMPLEMENTATION
-#include <stb_image/stb_image.h>
+#include "String.h"
 
 #include <fstream>
 #include "GDX11/Core/GDX11Assert.h"
@@ -24,23 +21,6 @@ namespace GDX11::Utils
 		return result;
 	}
 
-	ImageData LoadImageFile(const std::string& filename, bool flipImageY, int reqComponents)
-	{
-		ImageData data = {};
-		stbi_set_flip_vertically_on_load(flipImageY);
-		data.pixels = stbi_load(filename.c_str(), &data.width, &data.height, &data.nrComponents, reqComponents);
-
-		GDX11_CORE_ASSERT(data.pixels, "Failed to load image file: {0}", filename);
-
-		return data;
-	}
-
-	void FreeImageData(ImageData* data)
-	{
-		stbi_image_free(data->pixels);
-		data->pixels = nullptr;
-	}
-
 	std::wstring ToWideString(const std::string& str)
 	{
 		if (str.empty()) return std::wstring();
@@ -57,4 +37,3 @@ namespace GDX11::Utils
 		return ret;
 	}
 }
-
