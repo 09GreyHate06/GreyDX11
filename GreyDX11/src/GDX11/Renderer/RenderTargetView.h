@@ -20,7 +20,7 @@ namespace GDX11
 
 
 		virtual ID3D11RenderTargetView* GetNative() const override { return m_rtv.Get(); }
-		const std::shared_ptr<Texture2D>& GetTexture() const { return m_rtTexture; }
+		const std::shared_ptr<Texture2D>& GetTexture2D() const { return m_rtTexture; }
 
 		static void Bind(uint32_t numViews, const std::shared_ptr<RenderTargetView>* rtvs, const DepthStencilView* ds);
 		static void Bind(const RenderTargetViewArray& rtva, const DepthStencilView* ds);

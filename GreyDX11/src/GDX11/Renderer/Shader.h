@@ -71,10 +71,12 @@ namespace GDX11
 
 		static std::shared_ptr<VertexShader> Create(GDX11Context* context, const std::string& src, const std::string& target);
 		static std::shared_ptr<VertexShader> Create(GDX11Context* context, const std::string& csoFile);
+		static std::shared_ptr<VertexShader> Create(GDX11Context* context);
 
 	private:
 		VertexShader(GDX11Context* context, const std::string& src, const std::string& target);
 		VertexShader(GDX11Context* context, const std::string& csoFile);
+		VertexShader(GDX11Context* context);
 
 		Microsoft::WRL::ComPtr<ID3D11VertexShader> m_vs;
 		Microsoft::WRL::ComPtr<ID3DBlob> m_byteCode;

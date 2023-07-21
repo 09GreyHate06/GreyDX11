@@ -32,6 +32,11 @@ namespace GDX11
 		GDX11_CONTEXT_THROW_INFO(D3DReflect(m_byteCode->GetBufferPointer(), m_byteCode->GetBufferSize(), __uuidof(ID3D11ShaderReflection), &m_reflection));
 	}
 
+	VertexShader::VertexShader(GDX11Context* context)
+		: Shader(context), m_vs(nullptr), m_byteCode(nullptr), m_reflection(nullptr)
+	{
+	}
+
 	void VertexShader::Bind() const
 	{
 		m_context->GetDeviceContext()->VSSetShader(m_vs.Get(), nullptr, 0);
@@ -58,6 +63,11 @@ namespace GDX11
 	std::shared_ptr<VertexShader> VertexShader::Create(GDX11Context* context, const std::string& csoFile)
 	{
 		return std::shared_ptr<VertexShader>(new VertexShader(context, csoFile));
+	}
+
+	std::shared_ptr<VertexShader> VertexShader::Create(GDX11Context* context)
+	{
+		return std::shared_ptr<VertexShader>(new VertexShader(context));
 	}
 
 
