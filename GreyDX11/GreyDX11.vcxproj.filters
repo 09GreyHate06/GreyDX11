@@ -116,6 +116,7 @@
     <ClInclude Include="src\GDX11\Utils\String.h" />
     <ClInclude Include="src\GDX11\Utils\ResourceLibrary.h" />
     <ClInclude Include="src\GDX11\Utils\BasicMesh.h" />
+    <ClInclude Include="src\GDX11\Utils\Time.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\GDX11\Event\Input.cpp">
@@ -172,5 +173,6 @@
     <ClCompile Include="src\GDX11\Utils\Image.cpp" />
     <ClCompile Include="src\GDX11\Utils\String.cpp" />
     <ClCompile Include="src\GDX11\Utils\BasicMesh.cpp" />
+    <ClCompile Include="src\GDX11\Utils\Time.cpp" />
   </ItemGroup>
 </Project>

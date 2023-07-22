@@ -18,6 +18,8 @@ namespace GDX11::Utils
 			: VertexPUV({ p0, p1, p2 }, { uv0, uv1 })
 		{
 		}
+
+		VertexPUV() = default;
 	};
 
 	struct VertexPUVN
@@ -35,6 +37,8 @@ namespace GDX11::Utils
 			: VertexPUVN({ p0, p1, p2 }, { uv0, uv1 }, { n0, n1, n2 })
 		{
 		}
+
+		VertexPUVN() = default;
 	};
 
 	struct VertexEx
@@ -54,6 +58,8 @@ namespace GDX11::Utils
 			: VertexEx({ p0, p1, p2 }, { uv0, uv1 }, { t0, t1, t2 }, { bt0, bt1, bt2 }, { n0, n1, n2 })
 		{
 		}
+
+		VertexEx() = default;
 	};
 
 	std::array<DirectX::XMFLOAT3, 8> CreateCubeVertices(float minPos = -0.5f, float maxPos = 0.5f);
