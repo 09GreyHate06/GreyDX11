@@ -1,21 +1,8 @@
-workspace "GreyDX11"
-    architecture "x86_64"
-    startproject "GreyDX11"
 
-    configurations
-    {
-        "Debug",
-        "Release"
-    }
-
-outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
-
-IncludeDir = {}
 IncludeDir["stb_image"] = "GreyDX11/vendor/stb_image/"
 IncludeDir["spdlog"]    = "GreyDX11/vendor/spdlog/include"
 
 project "GreyDX11"
-    location "GreyDX11"
     kind "StaticLib"
     language "C++"
     cppdialect "C++17"
@@ -24,6 +11,11 @@ project "GreyDX11"
     targetdir ("bin/" .. outputdir .. "/%{prj.name}")
     objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
 
+    defines
+    {
+        --"GDX11_IMGUI_SUPPORT"
+    }
+    
     files
     {
         "%{prj.name}/src/**.h",
@@ -34,8 +26,8 @@ project "GreyDX11"
     includedirs
     {
         "%{prj.name}/src",
-        "%{IncludeDir.stb_image}",
         "%{prj.name}/vendor",
+        "%{IncludeDir.stb_image}",
         "%{IncludeDir.spdlog}",
     }
 
